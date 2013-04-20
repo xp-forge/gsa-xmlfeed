@@ -50,6 +50,17 @@
      *
      */
     #[@test]
+    public function add_record_returns_added_record() {
+      $feed= new XmlFeed('test', FeedType::$FULL);
+      $record= new UrlRecord('http://localhost');
+      $this->assertEquals($record, $feed->addRecord('add', $record));
+    }
+
+    /**
+     * Test addRecord
+     *
+     */
+    #[@test]
     public function delete_record() {
       $feed= new XmlFeed('test', FeedType::$FULL);
       $feed->addRecord('delete', new UrlRecord('http://localhost'));
