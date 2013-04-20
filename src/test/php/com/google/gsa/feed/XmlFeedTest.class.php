@@ -57,6 +57,28 @@
     }
 
     /**
+     * Test withRecord
+     *
+     */
+    #[@test]
+    public function with_record() {
+      $feed= new XmlFeed('test', FeedType::$FULL);
+      $feed->withRecord('add', new UrlRecord('http://localhost'));
+      $this->assertEquals(1, $feed->numRecords());
+    }
+
+    /**
+     * Test withRecord
+     *
+     */
+    #[@test]
+    public function with_record_returns_feed() {
+      $feed= new XmlFeed('test', FeedType::$FULL);
+      $record= new UrlRecord('http://localhost');
+      $this->assertEquals($feed, $feed->withRecord('add', $record));
+    }
+
+    /**
      * Test addRecord
      *
      */

@@ -64,6 +64,19 @@
     }
 
     /**
+     * Add a record and return this XML feed instance.
+     * 
+     * @param  string action
+     * @param  com.google.gsa.feed.Record record
+     * @return self this
+     * @throws lang.IllegalArgumentException when then action is unknown
+     */
+    public function withRecord($action, com·google·gsa·feed·Record $record) {
+      $this->addRecord($action, $record);
+      return $this;
+    }
+
+    /**
      * Retrieve the number of records
      *
      * @return  int
