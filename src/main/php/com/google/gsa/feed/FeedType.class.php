@@ -1,30 +1,13 @@
-<?php
-/* This class is part of the XP framework
- *
- * $Id$
- */
+<?php namespace com\google\gsa\feed;
  
-  uses('lang.Enum');
+/**
+ * Feed types enumeration
+ */
+class FeedType extends \lang\Enum {
+  public static $INCREMENTAL, $FULL;
 
-  /**
-   * Feed types enumeration
-   *
-   */
-  class FeedType extends Enum {
-    public static $INCREMENTAL, $FULL;
-
-    static function __static() {
-      self::$INCREMENTAL= new self(1, 'incremental');
-      self::$FULL= new self(2, 'full');
-    }
-
-    /**
-     * Returns all enum members
-     *
-     * @return  lang.Enum[]
-     */
-    public static function values() {
-      return parent::membersOf(__CLASS__);
-    }
+  static function __static() {
+    self::$INCREMENTAL= new self(1, 'incremental');
+    self::$FULL= new self(2, 'full');
   }
-?>
+}

@@ -1,41 +1,22 @@
-<?php
-/* This class is part of the XP framework
- *
- * $Id$
+<?php namespace com\google\gsa\feed;
+ 
+/**
+ * Tests UrlRecord implementation
  */
- 
-  uses(
-    'unittest.TestCase', 
-    'com.google.gsa.feed.UrlRecord'
-  );
- 
-  /**
-   * Tests XML Feed implementation
-   *
-   */
-  class UrlRecordTest extends TestCase {
+class UrlRecordTest extends \unittest\TestCase {
 
-    /**
-     * Test URL
-     *
-     */
-    #[@test]
-    public function url() {
-      $this->assertEquals('http://localhost/', create(new UrlRecord('http://localhost/'))->getUrl());
-    }
-
-    /**
-     * Test visit
-     *
-     */
-    #[@test]
-    public function visit() {
-      $n= new Node('record');
-      create(new UrlRecord('http://localhost/'))->visit($n);
-      $this->assertEquals(
-        new Node('record', NULL, array('url' => 'http://localhost/')), 
-        $n
-      );
-    }
+  #[@test]
+  public function url() {
+    $this->assertEquals('http://localhost/', create(new UrlRecord('http://localhost/'))->getUrl());
   }
-?>
+
+  #[@test]
+  public function visit() {
+    $n= new \xml\Node('record');
+    create(new UrlRecord('http://localhost/'))->visit($n);
+    $this->assertEquals(
+      new \xml\Node('record', null, array('url' => 'http://localhost/')), 
+      $n
+    );
+  }
+}

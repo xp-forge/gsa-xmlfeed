@@ -1,25 +1,18 @@
-<?php
-/* This class is part of the XP framework
+<?php namespace com\google\gsa\feed;
+
+/**
+ * Record with URL only
  *
- * $Id$
+ * @test  xp://com.google.gsa.feed.UrlRecordTest
  */
- 
-  uses('com.google.gsa.feed.Record');
+class UrlRecord extends Record {
 
   /**
-   * Record with URL only
+   * Create node for XML feed
    *
-   * @test  xp://src.test.php.com.google.gsa.feed.UrlRecordTest
+   * @param  xml.Node n
    */
-  class UrlRecord extends com·google·gsa·feed·Record {
-
-    /**
-     * Create node for XML feed
-     *
-     * @param  xml.Node n
-     */
-    public function visit(Node $n) {
-      parent::visit($n);
-    }
+  public function visit(\xml\Node $n) {
+    parent::visit($n);
   }
-?>
+}
