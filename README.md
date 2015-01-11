@@ -41,22 +41,19 @@ API
 --
 ```sh
 $ xp -r com.google.gsa.feed
-@lang.FileSystemClassLoader<...\gsa-xmlfeed\src\main\php\>
-@lang.FileSystemClassLoader<...\gsa-xmlfeed\src\test\php\>
+@FileSystemCL<...\xp\gsa-xmlfeed\src\main\php\>
+@FileSystemCL<...\xp\gsa-xmlfeed\src\test\php\>
 package com.google.gsa.feed {
+  package com.google.gsa.feed.unittest
 
   public enum com.google.gsa.feed.FeedType
 
   public abstract class com.google.gsa.feed.Record
   public class com.google.gsa.feed.ContentRecord
-  public class com.google.gsa.feed.ContentRecordTest
   public class com.google.gsa.feed.FeedConnection
-  public class com.google.gsa.feed.FeedConnectionTest
   public class com.google.gsa.feed.FeedPublishingException
   public class com.google.gsa.feed.UrlRecord
-  public class com.google.gsa.feed.UrlRecordTest
   public class com.google.gsa.feed.XmlFeed
-  public class com.google.gsa.feed.XmlFeedTest
 }
 ```
 
