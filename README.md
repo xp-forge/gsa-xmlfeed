@@ -13,8 +13,14 @@ This API lets you speak to the Google Search Appliance's (GSA) feeding API and m
 Usage example:
 --
 ```php
+use com\google\gsa\feed\XmlFeed;
+use com\google\gsa\feed\FeedType;
+use com\google\gsa\feed\ContentRecord;
+use com\google\gsa\feed\FeedConnection;
+use com\google\gsa\feed\FeedPublishingException;
+
 $feed= new XmlFeed($this->getClass()->getSimpleName(), FeedType::$INCREMENTAL);
-foreach ($record in $records) {
+foreach ($records as $record) {
   $feed->addRecord('add', new ContentRecord($record['url'], 'text/html',
     '<html><head>'.
     '<title>'.$record['title'].'</title>'.
@@ -25,7 +31,7 @@ foreach ($record in $records) {
 }
 
 try {
-  new FeedConnection('http://gsa-test01.example.com:19900/xmlfeed').publish($feed);
+  (new FeedConnection('http://gsa-test01.example.com:19900/xmlfeed'))->publish($feed);
 } catch (FeedPublishingException $e) {
   // Handle
 }
