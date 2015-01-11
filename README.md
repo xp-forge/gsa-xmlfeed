@@ -1,18 +1,25 @@
 gsa-xmlfeed
 ===========
-Feed API for Google Search Appliance (GSA)
+
+[![Build Status on TravisCI](https://secure.travis-ci.org/xp-forge/gsa-xmlfeed.svg)](http://travis-ci.org/xp-forge/gsa-xmlfeed)
+[![XP Framework Module](https://raw.githubusercontent.com/xp-framework/web/master/static/xp-framework-badge.png)](https://github.com/xp-framework/core)
+[![BSD Licence](https://raw.githubusercontent.com/xp-framework/web/master/static/licence-bsd.png)](https://github.com/xp-framework/core/blob/master/LICENCE.md)
+[![Required PHP 5.4+](https://raw.githubusercontent.com/xp-framework/web/master/static/php-5_4plus.png)](http://php.net/)
+[![Latest Stable Version](https://poser.pugx.org/xp-forge/gsa-xmlfeed/version.png)](https://packagist.org/packages/xp-forge/gsa-xmlfeed)
 
 
-Usage example (XP Language)
+This API lets you speak to the Google Search Appliance's (GSA) feeding API and manage items on indexes either incrementally or as a whole.
+
+Usage example:
 --
 ```php
-$feed= new XmlFeed($this.getClass().getSimpleName(), FeedType::$INCREMENTAL);
+$feed= new XmlFeed($this->getClass()->getSimpleName(), FeedType::$INCREMENTAL);
 foreach ($record in $records) {
-  $feed.addRecord('add', new ContentRecord($record['url'], 'text/html',
-    '<html><head>' ~
-    '<title>' ~ $record['title'] ~ '</title>' ~
-    '</head><body>' ~
-    $record['body'] ~
+  $feed->addRecord('add', new ContentRecord($record['url'], 'text/html',
+    '<html><head>'.
+    '<title>'.$record['title'].'</title>'.
+    '</head><body>'.
+    $record['body'].
     '</body></html>'
   ));
 }
