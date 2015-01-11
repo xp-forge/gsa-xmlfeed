@@ -1,5 +1,9 @@
-<?php namespace com\google\gsa\feed;
- 
+<?php namespace com\google\gsa\feed\unittest;
+
+use com\google\gsa\feed\XmlFeed;
+use com\google\gsa\feed\FeedType;
+use com\google\gsa\feed\UrlRecord;
+
 /**
  * Tests XML Feed implementation
  */
