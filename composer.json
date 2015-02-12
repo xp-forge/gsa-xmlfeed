@@ -6,7 +6,7 @@
   "description" : "Feed API for Google Search Appliance (GSA)",
   "keywords": ["module", "xp"],
   "require" : {
-    "xp-framework/core" : "dev-master",
+    "xp-framework/core" : "~6.0",
     "xp-framework/xml"  : "~6.0",
     "xp-framework/http" : "~6.0",
     "php" : ">=5.4.0"
