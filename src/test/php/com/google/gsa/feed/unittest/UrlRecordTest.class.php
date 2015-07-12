@@ -16,7 +16,7 @@ class UrlRecordTest extends \unittest\TestCase {
   #[@test]
   public function visit() {
     $n= new Node('record');
-    create(new UrlRecord('http://localhost/'))->visit($n);
+    (new UrlRecord('http://localhost/'))->visit($n);
     $this->assertEquals(new Node('record', null, ['url' => 'http://localhost/']), $n);
   }
 }

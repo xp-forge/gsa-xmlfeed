@@ -31,7 +31,7 @@ class ContentRecordTest extends \unittest\TestCase {
     $n= new Node('record');
     (new ContentRecord('http://localhost/', 'text/html', 'test'))->visit($n);
     $this->assertEquals(
-      create(new Node('record', null, array('url' => 'http://localhost/', 'mimetype' => 'text/html')))
+      (new Node('record', null, array('url' => 'http://localhost/', 'mimetype' => 'text/html')))
         ->withChild(new Node('content', new CData('test')))
       ,
       $n

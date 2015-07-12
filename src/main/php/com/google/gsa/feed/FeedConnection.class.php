@@ -47,7 +47,7 @@ class FeedConnection extends \lang\Object {
    */
   public function payload($feed) {
     $tree= new Tree('gsafeed');
-    $tree->addChild(create(new Node('header'))
+    $tree->addChild((new Node('header'))
       ->withChild(new Node('datasource', $feed->dataSource()))
       ->withChild(new Node('feedtype',  $feed->feedType()->name())))
     ; 
@@ -71,7 +71,7 @@ class FeedConnection extends \lang\Object {
     $req= $this->conn->create(new HttpRequest());
     $req->setTarget('/xmlfeed');
     $req->setMethod(HttpConstants::POST);
-    $req->setParameters(create(new FormRequestData())
+    $req->setParameters((new FormRequestData())
       ->withBoundary('----------boundary_of_feed_data$')
       ->withPart(new FormData('feedtype', $feed->feedType()->name()))
       ->withPart(new FormData('datasource', $feed->dataSource()))

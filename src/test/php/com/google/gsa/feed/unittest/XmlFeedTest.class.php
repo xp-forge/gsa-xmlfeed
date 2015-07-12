@@ -11,12 +11,12 @@ class XmlFeedTest extends \unittest\TestCase {
 
   #[@test]
   public function data_source() {
-    $this->assertEquals('test', create(new XmlFeed('test', FeedType::$FULL))->dataSource());
+    $this->assertEquals('test', (new XmlFeed('test', FeedType::$FULL))->dataSource());
   }
 
   #[@test]
   public function feed_type() {
-    $this->assertEquals(FeedType::$FULL, create(new XmlFeed('test', FeedType::$FULL))->feedType());
+    $this->assertEquals(FeedType::$FULL, (new XmlFeed('test', FeedType::$FULL))->feedType());
   }
 
   #[@test]
