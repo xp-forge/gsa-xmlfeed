@@ -3,6 +3,12 @@ gsa-xmlfeed ChangeLog
 
 ## ?.?.? / ????-??-??
 
+## 3.0.0 / 2016-01-23
+
+* **Heads up**: Changed minimum XP version to XP 6.5.0, and with it the
+  minimum PHP version to PHP 5.5
+  (@thekid)
+
 ## 2.1.2 / 2015-07-12
 
 * Added forward compatibility with XP 6.4.0 - @thekid
